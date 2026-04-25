@@ -1,0 +1,12 @@
+payload:
+  - PROCESS-NAME,com.hicorenational.antifraud
+  - PROCESS-NAME,com.miui.packageinstaller
+  - PROCESS-NAME,com.miui.guardprovider
+  - PROCESS-NAME,com.tencent.qqpimsecure
+  - PROCESS-NAME,com.tencent.token
+  - PROCESS-NAME,com.qihoo360.mobilesafe
+  - PROCESS-NAME,com.qihoo.cleandroid_cn
+  - PROCESS-NAME,com.qihoo.cleandroid_lite
+  - PROCESS-NAME,com.cleanmaster.mguard_cn
+  - PROCESS-NAME,cn.xuexi.android
+  - DOMAIN-SUFFIX,gjfzpt.cn

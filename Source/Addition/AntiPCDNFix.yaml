@@ -1,0 +1,5 @@
+payload:
+  -  AND,((DOMAIN-SUFFIX,mcdn.bilivideo.cn),(PROCESS-NAME,yt-dlp.exe))
+  -  AND,((DOMAIN-SUFFIX,mcdn.bilivideo.cn),(PROCESS-NAME,yt-dlp))
+  -  AND,((DOMAIN-SUFFIX,mcdn.bilivideo.cn),(PROCESS-NAME,mpv.exe))
+  -  AND,((DOMAIN-SUFFIX,mcdn.bilivideo.cn),(PROCESS-NAME,mpv))

@@ -1,0 +1,214 @@
+# Auther: CocoaDuck
+
+log-level: warning
+
+mixed-port: 7890
+external-controller: "127.0.0.1:9090"
+secret: "SparkleSparkleSparkle"
+
+mode: rule
+find-process-mode: strict
+
+ipv6: true
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+  tracing: true
+
+dns!:
+  enable: true
+  listen: "127.0.0.1:1053"
+  ipv6: true
+  prefer-h3: true
+  respect-rules: false
+  default-nameserver:
+    - "223.5.5.5"
+    - "119.29.29.29"
+  nameserver:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  nameserver-policy:
+    "geosite:private":
+      - "system"
+  enhanced-mode: fake-ip
+  fake-ip-filter-mode: blacklist
+  fake-ip-range: "198.18.0.1/16"
+  fake-ip-filter:
+    # ========= LAN =========
+    - "192.168.0.0/16"
+    - "172.16.0.0/12"
+    - "10.0.0.0/8"
+    - "+.local"
+    - "+.localdomain"
+    - "+.localhost"
+    - "+.lan"
+    - "+.home.arpa"
+    - "+.test"
+    - "+.example"
+    - "+.invalid"
+    # ========= NTP =========
+    - "+.ntp.*.com"
+    - "+.ntp.org"
+    - "+.time.com"
+    - "+.time.*.com"
+    - "+.time.*.*.com"
+    # ======== STUN =========
+    - "+.stun.*"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "+.stun.*.*.*.*.*"
+    # == Win Connnect Test ==
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.ipv6.microsoft.com"
+    # ======== Xbox =========
+    - "+.xboxlive.com"
+    - "xbox.*.microsoft.com"
+    - "xbox.*.*.microsoft.com"
+    # ======== MiJia ========
+    - "Mijia Cloud"
+    - "+.mijia.tech"
+    # ======== Other ========
+    - "mtalk.google.com"
+    - "+.srv.nintendo.net"
+    - "+.mcdn.bilivideo.cn"
+    # - "localhost.ptlogin2.qq.com"
+    
+tun!:
+  enable: true
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
+  dns-hijack:
+    - udp://any:53
+    - tcp://any:53
+  mtu: 9000
+  
+sniffer!:
+    enable: true
+    parse-pure-ip: true
+    force-dns-mapping: true
+    override-destination: true
+    sniff:
+      QUIC:
+        ports: [443, 8443]
+      TLS:
+        ports: [443, 8443]
+      HTTP:
+        ports: [80, 8080-8880]
+        override-destination: true
+    skip-domain:
+      - "Mijia Cloud"
+      - "+.mijia.tech"
+      - "+.push.apple.com"
+
+geodata-mode: true
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 12
+geox-url:
+  geoip: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb
+# Override/
+rule-providers:
+  DirectProcess:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Addition/DirectProcess.yaml"
+  AntiAntiFraud:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Addition/AntiAntiFraud.yaml"
+  AntiPCDNFix:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Addition/AntiPCDNFix.yaml"
+  AntiPCDN:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 43200
+    url: "https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Addition/AntiPCDN.yaml"
+  AWAvenue:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash.yaml"
+  AdRules:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules_domainset.txt"
+
+proxy-groups:
+  - name: "PROXY"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Rocket.png"
+    type: select
+    proxies:
+      - "⚡ AUTO"
+    include-all: true
+    exclude-filter: "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Time Out|超时|超時|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "PCDN"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png"
+    type: select
+    proxies:
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "AD & Privacy"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png"
+    type: select
+    proxies:
+      - "REJECT"
+      - "PASS"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "GLOBAL"
+    icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final_1.png"
+    type: select
+    proxies:
+      - "PROXY"
+      - "DIRECT"
+      - "REJECT"
+    url: "http://www.gstatic.com/generate_204"
+  - name: "⚡ AUTO"
+    type: url-test
+    hidden: true
+    include-all: true
+    exclude-filter: "(Official|官网|官網|Data Left|Remain|剩余|剩餘|Traffic|流量|Expire|Expiry|到期|过期|過期|效期|Time|时间|時間|Time Out|超时|超時|Reset|重置|分割线|(\\d[\\d.]*\\s*[MG]B[^\\dA-Za-z]+|[:：]\\s*)\\d[\\d.]*\\s*GB(?!\\dA-Za-z))"
+    url: "http://www.gstatic.com/generate_204"
+
+rules:
+  - "RULE-SET,DirectProcess,DIRECT"
+  - "RULE-SET,AntiAntiFraud,REJECT"  
+  - "RULE-SET,AntiPCDNFix,DIRECT"
+  - "RULE-SET,AntiPCDN,PCDN"
+  - "RULE-SET,AWAvenue,AD & Privacy"
+  - "RULE-SET,AdRules,AD & Privacy"
+  # https://github.com/v2fly/domain-list-community/blob/master/data/category-games
+  # https://github.com/Loyalsoldier/v2ray-rules-dat?tab=readme-ov-file#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95
+  - "GEOSITE,category-games@cn,DIRECT"
+  # https://www.yetpage.com/archives/278
+  - "GEOSITE,google,PROXY"
+  - "GEOSITE,microsoft,PROXY"
+  - "GEOSITE,apple,PROXY"
+  - "GEOSITE,private,DIRECT"
+  - "GEOSITE,cn,DIRECT"
+  - "GEOSITE,!cn,PROXY"
+  - "GEOIP,private,DIRECT"
+  - "GEOIP,cn,DIRECT"
+  - "GEOIP,!cn,PROXY"
+  - "MATCH,PROXY"

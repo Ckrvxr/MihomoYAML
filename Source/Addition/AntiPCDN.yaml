@@ -1,0 +1,27 @@
+payload:
+  - DOMAIN-SUFFIX,gjfzpt.cn
+  - DOMAIN-SUFFIX,szbdyd.com
+  - DOMAIN-SUFFIX,bsccdn.net
+  - DOMAIN-SUFFIX,pkoplink.com
+  - DOMAIN-SUFFIX,pcdn.xmcdn.com
+  - DOMAIN-SUFFIX,pcdn.yximgs.com
+  - DOMAIN-SUFFIX,saxysec.com
+  - DOMAIN-SUFFIX,uhabo.com
+  - DOMAIN-SUFFIX,xycdn.com
+  - DOMAIN-SUFFIX,kuiniuca.com
+  - DOMAIN-SUFFIX,onethingpcs.com
+  - DOMAIN-SUFFIX,jomodns.cn
+  - DOMAIN-SUFFIX,p2p.huya.com
+  - DOMAIN-SUFFIX,stun.hitv.com
+  - DOMAIN-SUFFIX,tpa-hcdn.iqiyi.com
+  - DOMAIN-SUFFIX,mcdn.bilivideo.cn
+  - DOMAIN-SUFFIX,edge.mountaintoys.cn
+  - AND,((DOMAIN-SUFFIX,biliapi.net),(DOMAIN-KEYWORD,pcdn))
+  - AND,((DOMAIN-SUFFIX,youku.com),(DOMAIN-KEYWORD,pcdn))
+  - AND,((DOMAIN-SUFFIX,douyucdn.cn),(DOMAIN-KEYWORD,p2p))
+  - AND,((DOMAIN-SUFFIX,douyucdn.cn),(DOMAIN-KEYWORD,stun))
+  - AND,((DOMAIN-SUFFIX,qq.com),(DOMAIN-KEYWORD,p2p))
+  # - DOMAIN-REGEX,.*pcdn.*biliapi.net
+  # - DOMAIN-REGEX,.*pcdn.*youku.com
+  # - DOMAIN-REGEX,.*p2p.*douyucdn.cn 
+  # - DOMAIN-REGEX,.*p2p.*qq.com
