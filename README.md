@@ -28,47 +28,18 @@ MihomoYAML is a personal rule library designed for [Mihomo](https://github.com/M
 
 ## 🚀 Quick Start
 
-### Client 1: FlClash
+Scripts compatible with both **FlClash** and **Sparkle**.
 
-#### FlClash_PLUS (Full-Featured)
+| Script | URL |
+|--------|-----|
+| **PLUS** (Full) | `https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/FlClash_PLUS.js` |
+| **STD** (Light) | `https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/FlClash_STD.js` |
 
-```url
-https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/FlClash_PLUS.js
-```
+> ### 🔴 WARNING: Modify `yourSalt` (line 15) in the script to a unique string before use!
 
-#### FlClash_STD (Lightweight)
+**FlClash:** Tools → Advanced configuration → Script → add URL → Profiles → ... → More → Override → Script mode → select script → save → resync
 
-```url
-https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/FlClash_STD.js
-```
-
-#### Setup Steps
-
-1. Open the FlClash panel
-2. Switch to **"Tools"** page
-3. Click **"Advanced configuration"** option
-4. Click **"Script"** option
-5. Add the script URL (PLUS or STD) provided above
-6. Switch to **"Profiles"** page
-7. Click **"..."** button
-8. Click **"More"** option
-9. Click **"Override"** option
-10. Switch Override mode to **"Script"** and select our script, then save
-11. Resync our subscriptions
-
-### Client 2: Sparkle (Deprecated)
-
-```url
-https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/Sparkle_STD.yaml
-```
-
-**Steps:**
-
-1. Download the configuration file
-2. Open the Sparkle panel
-3. Go to the **"Override Configuration"** interface and upload the file
-4. Enable the **"Global Application"** switch of script
-5. Save
+**Sparkle:** Override Configuration → add script URL → enable Global Application → save
 
 
 ## 🛠️ Project Structure
@@ -82,9 +53,8 @@ MihomoYAML/
 │   │   ├── AntiPCDNFix.yaml
 │   │   └── DirectProcess.yaml
 │   └── Override/          # Override configuration files
-│        ├── FlClash_PLUS.js   # Full-featured FlClash script
-│        ├── FlClash_STD.js    # Lightweight FlClash script
-│        └── Sparkle_STD.yaml
+│        ├── PLUS.js   # Full-featured script (FlClash & Sparkle)
+│        ├── STD.js    # Lightweight script (FlClash & Sparkle)
 ├── LICENSE
 └── README.md
 ```
