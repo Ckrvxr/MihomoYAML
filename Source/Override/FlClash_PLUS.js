@@ -2,10 +2,10 @@
 // jdsdelivr mirror:
 // 1. https://fastly.jsdelivr.net/gh/
 // 2. https://gcore.jsdelivr.net/gh/
-// 3. https://testingcf.jsdelivr.net/
-// 3. https://cdn.jsdmirror.com/gh
-// 4. https://cdn.jsdmirror.cn/gh
-// 5. https://cdn.jsdmirror.com/gh
+// 3. https://testingcf.jsdelivr.net/gh/
+// 4. https://cdn.jsdmirror.com/gh/
+// 5. https://cdn.jsdmirror.cn/gh/
+// 6. https://cdn.jsdmirror.com/gh/
 
 const main = (config) => {
     // CDN Slect
@@ -46,7 +46,7 @@ const main = (config) => {
     config["mode"] = "rule";
     config["unified-delay"] = true;
     config["profile"] = { "store-selected": true, "store-fake-ip": true };
-    config["ipv6"] = false;
+    config["ipv6"] = true;
     config["find-process-mode"] = "strict";
     config["tun"] = {
         "enable": true,
@@ -54,8 +54,7 @@ const main = (config) => {
         "auto-route": true,
         "auto-redirect": true,
         "auto-detect-interface": true,
-        "strict-route": true,
-        "mtu": 9000,
+        "mtu": 1500,
         "dns-hijack": [
             "udp://any:53",
             "tcp://any:53"
@@ -65,7 +64,8 @@ const main = (config) => {
         "enable": true,
         "listen": "127.0.0.1:1053",
         "cache-algorithm": "arc",
-        "ipv6": false,
+        "ipv6": true,
+        "prefer-h3": true,
         "default-nameserver": [
             "223.5.5.5",
             "119.29.29.29"
