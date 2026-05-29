@@ -23,7 +23,8 @@ MihomoYAML is a personal rule library designed for [Mihomo](https://github.com/M
 | **AntiPCDN** | Blocks P2P CDN to accelerate streaming access |
 | **217heidai/adblockfilters** | Blocks ads and telemetry for all device |
 | **AWAvenue** | Blocks ads and telemetry for mobile phone |
-| **category-games@cn** | Allows games that support China access to use direct connections to save bandwidth |
+| **Firehol Level 1** | Blocks malicious IP addresses |
+| **category-games@cn** | Allows games that support China Mainland CDN to use direct connections to save bandwidth |
 | **Bulk of Routing rules** | Open AI, Google, Microsoft, Netflex, HBO and so on
 
 ## 🚀 Quick Start
@@ -32,10 +33,10 @@ Scripts compatible with both **FlClash** and **Sparkle**.
 
 | Script | URL |
 |--------|-----|
-| **PLUS** (Full) | `https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/FlClash_PLUS.js` |
-| **STD** (Light) | `https://codeberg.org/CocoaDuck/Snippets/raw/master/MihomoYAML/Source/Override/FlClash_STD.js` |
+| **PLUS** (Full) | `https://raw.githubusercontent.com/Ckrvxr/mihomo_yaml/refs/heads/main/Source/Override/PLUS.js` |
+| **STD** (Light) | `https://raw.githubusercontent.com/Ckrvxr/mihomo_yaml/refs/heads/main/Source/Override/STD.js` |
 
-> ### 🔴 WARNING: Modify `yourSalt` (line 15) in the script to a unique string before use!
+> ### 🔴 WARNING: Modify `yourSalt` (line 15) in the script to a unique string before use to prevent privacy issues!
 
 **FlClash:** Tools → Advanced configuration → Script → add URL → Profiles → ... → More → Override → Script mode → select script → save → resync
 
