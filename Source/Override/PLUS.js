@@ -576,17 +576,7 @@ const main = (config) => {
             proxies: ["🚀 PROXY", "⚡ AUTO", "🏡 DIRECT", ...filteredProxies]
         },
         {
-            name: "💵 Binance",
-            type: "select",
-            proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
-        },
-        {
-            name: "💴 OKX",
-            type: "select",
-            proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
-        },
-        {
-            name: "💷 Bybit",
+            name: "🔗 Blockchain & Crypto",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         }
@@ -594,6 +584,8 @@ const main = (config) => {
     ];
 
     config.rules = [
+        //
+        "DOMAIN-SUFFIX,micu.hk,🚀 PROXY",
         // ------------------------------------------------------
         "GEOSITE,private,🏡 DIRECT",
         "RULE-SET,AntiAntiFraud,🚫 REJECT",
@@ -632,9 +624,7 @@ const main = (config) => {
         "GEOSITE,discord,🎙️ Discord",
         "GEOSITE,paypal,💰 PayPal",
         "GEOSITE,stripe,💳 Stripe",
-        "GEOSITE,binance,💵 Binance",
-        "GEOSITE,okx,💴 OKX",
-        "GEOSITE,bybit,💷 Bybit",
+        "GEOSITE,category-cryptocurrency,🔗 Blockchain & Crypto",
         "GEOSITE,cn,🏡 DIRECT",
         "GEOSITE,!cn,🚀 PROXY",
         // ------------------------------------------------------
