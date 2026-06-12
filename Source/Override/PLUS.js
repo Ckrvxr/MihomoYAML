@@ -16,7 +16,7 @@ const main = (config) => {
     config["mode"] = "rule";
     config["unified-delay"] = true;
     config["profile"] = { "store-selected": true, "store-fake-ip": true };
-    config["ipv6"] = true;
+    config["ipv6"] = false;
     config["find-process-mode"] = "strict";
     config["tun"] = {
         "enable": true,
@@ -34,7 +34,7 @@ const main = (config) => {
         "enable": true,
         "listen": "127.0.0.1:1053",
         "cache-algorithm": "arc",
-        "ipv6": true,
+        "ipv6": false,
         "prefer-h3": true,
         "default-nameserver": [
             "223.5.5.5",
