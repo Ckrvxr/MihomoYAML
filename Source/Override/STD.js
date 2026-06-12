@@ -11,36 +11,6 @@ const main = (config) => {
     // CDN Slect
     const cdnBase = "https://fastly.jsdelivr.net/gh/";
 
-    // Password Generation
-    const yourSalt = "";
-    const fnv256 = (str) => {
-        const seeds = [
-            0x243f6a88, 0x85a308d3, 0x13198a2e, 0x03707344,
-            0xa4093822, 0x299f31d0, 0x082efa98, 0xec4e6c89
-        ];
-        const h = new Uint32Array(seeds);
-        for (let i = 0; i < str.length; i++) {
-            const char = str.charCodeAt(i);
-            for (let j = 0; j < 8; j++) {
-                h[j] = Math.imul(h[j] ^ char, 16777619);
-            }
-        }
-        var res = "";
-        for (var k = 0; k < 8; k++) {
-            res += (h[k] >>> 0).toString(16).padStart(8, '0');
-        }
-        return res;
-    };
-    if (!yourSalt || yourSalt === 0) {
-        throw new Error("🛑 [CONFIG ERROR] yourSalt is EMPTY! You must set a unique salt to generate passwords.");
-    }
-    config["secret"] = fnv256(yourSalt + "control");
-    config["authentication"] = ["Mihomo:" + fnv256(yourSalt + "lan")];
-    config["skip-auth-prefixes"] = [
-        "127.0.0.1/8",
-        "::1/128"
-    ];
-
     // Basic Config
     config["log-level"] = "error";
     config["mode"] = "rule";
