@@ -18,9 +18,10 @@ const main = (config) => {
     config["profile"] = { "store-selected": true, "store-fake-ip": true };
     config["ipv6"] = false;
     config["find-process-mode"] = "strict";
+    config["udp"] = true;
     config["tun"] = {
         "enable": true,
-        "stack": "system",
+        "stack": "mixed",
         "auto-route": true,
         "auto-redirect": true,
         "auto-detect-interface": true,
