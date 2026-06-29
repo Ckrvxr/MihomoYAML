@@ -36,8 +36,6 @@ Scripts compatible with both **FlClash** and **Sparkle**.
 | **PLUS** (Full) | `https://raw.githubusercontent.com/Ckrvxr/mihomo_yaml/refs/heads/main/Source/Override/PLUS.js` |
 | **STD** (Light) | `https://raw.githubusercontent.com/Ckrvxr/mihomo_yaml/refs/heads/main/Source/Override/STD.js` |
 
-> ### 🔴 WARNING: Modify `yourSalt` (line 15) in the script to a unique string before use to prevent privacy issues!
-
 **FlClash:** Tools → Advanced configuration → Script → add URL → Profiles → ... → More → Override → Script mode → select script → save → resync
 
 **Sparkle:** Override Configuration → add script URL → enable Global Application → save
