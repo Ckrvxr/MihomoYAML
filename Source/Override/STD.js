@@ -1,4 +1,4 @@
-// Auther: CocoaDuck
+// Auther: AcuteSwirl
 // jdsdelivr mirror:
 // 1. https://fastly.jsdelivr.net/gh/
 // 2. https://gcore.jsdelivr.net/gh/
@@ -9,7 +9,7 @@
 
 const main = (config) => {
     // CDN Slect
-    const cdnBase = "https://fastly.jsdelivr.net/gh/";
+    const cdnBase = "https://testingcf.jsdelivr.net/gh/";
 
     // Basic Config
     config["log-level"] = "error";
@@ -448,7 +448,6 @@ const main = (config) => {
         "RULE-SET,AntiPCDNFix,🏡 DIRECT",
         "RULE-SET,AntiPCDN,🧼 PCDN",
         "RULE-SET,217heidaiAdblockFilters,🔰 AD & Privacy",
-        "GEOSITE,category-ads-all,🔰 AD & Privacy",
         "RULE-SET,DirectProcess,🏡 DIRECT",
         "GEOSITE,category-games@cn,🏡 DIRECT",
         "GEOSITE,cn,🏡 DIRECT",

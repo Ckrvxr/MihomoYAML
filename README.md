@@ -3,6 +3,8 @@
 
 MihomoYAML is a personal rule library designed for [Mihomo](https://github.com/MetaCubeX/mihomo) (Clash Meta), providing AD-Blocking, Privacy Protection, and AntiAntiFraud features.
 
+The **core** feature is process run in **local** environment completely! Don't need **subconverter** remote server any more!
+
 ## ✨ Features
 
 - 🛡️ **Anti-Fraud Protection** - Strongly blocks anti-fraud programs on mobile phones, including automatic uploading of app lists

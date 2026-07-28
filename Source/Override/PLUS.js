@@ -1,4 +1,4 @@
-// Auther: CocoaDuck
+// Auther: AcuteSwirl
 // jdsdelivr mirror:
 // 1. https://fastly.jsdelivr.net/gh/
 // 2. https://gcore.jsdelivr.net/gh/
@@ -9,7 +9,7 @@
 
 const main = (config) => {
     // CDN Slect
-    const cdnBase = "https://fastly.jsdelivr.net/gh/";
+    const cdnBase = "https://testingcf.jsdelivr.net/gh/";
 
     // Basic Config
     config["log-level"] = "error";
@@ -467,17 +467,17 @@ const main = (config) => {
         },
         // -------------------------------------------------------------------------------------
         {
-            name: "🤑 OpenAI",
+            name: "💭 OpenAI",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
         {
-            name: "🧠 Anthropic",
+            name: "💥 Anthropic",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
         {
-            name: "🌟 X.AI",
+            name: "🌟 Grok",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
@@ -488,7 +488,7 @@ const main = (config) => {
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
         {
-            name: "🎬 Netflix",
+            name: "🍿 Netflix",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
@@ -503,7 +503,7 @@ const main = (config) => {
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
         {
-            name: "📹 Prime Video",
+            name: "▶️ Prime Video",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
@@ -519,6 +519,11 @@ const main = (config) => {
         },
         {
             name: "🎵 TikTok",
+            type: "select",
+            proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
+        },
+        {
+            name: "🏴‍☠️ Emby",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
         },
@@ -579,20 +584,22 @@ const main = (config) => {
             name: "🔗 Blockchain & Crypto",
             type: "select",
             proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
-        }
+        },
         // -------------------------------------------------------------------------------------
+        {
+            name: "🫣 Secret",
+            type: "select",
+            proxies: ["🚀 PROXY", "⚡ AUTO", ...filteredProxies]
+        }
     ];
 
     config.rules = [
-        //
-        "DOMAIN-SUFFIX,micu.hk,🚀 PROXY",
         // ------------------------------------------------------
         "GEOSITE,private,🏡 DIRECT",
         "RULE-SET,AntiAntiFraud,🚫 REJECT",
         "RULE-SET,AntiPCDNFix,🏡 DIRECT",
         "RULE-SET,AntiPCDN,🧼 PCDN",
         "RULE-SET,217heidaiAdblockFilters,🔰 AD & Privacy",
-        "GEOSITE,category-ads-all,🔰 AD & Privacy",
         "RULE-SET,DirectProcess,🏡 DIRECT",
         "GEOSITE,category-games@cn,🏡 DIRECT",
         "GEOSITE,speedtest,⚡ Speedtest",
@@ -603,17 +610,18 @@ const main = (config) => {
         "GEOSITE,meta,📘 Meta",
         "GEOSITE,facebook,📘 Meta",
         "GEOSITE,instagram,📘 Meta",
-        "GEOSITE,openai,🤑 OpenAI",
-        "GEOSITE,anthropic,🧠 Anthropic",
-        "GEOSITE,xai,🌟 X.AI",
-        "GEOSITE,netflix,🎬 Netflix",
+        "GEOSITE,openai,💭 OpenAI",
+        "GEOSITE,anthropic,💥 Anthropic",
+        "GEOSITE,xai,🌟 Grok",
+        "GEOSITE,spotify,🎧 Spotify",
+        "GEOSITE,netflix,🍿 Netflix",
         "GEOSITE,disney,🏰 Disney+",
         "GEOSITE,hbo,🎥 HBO",
-        "GEOSITE,primevideo,📹 Prime Video",
+        "GEOSITE,primevideo,▶️ Prime Video",
         "GEOSITE,twitch,📺 Twitch",
-        "GEOSITE,spotify,🎧 Spotify",
         "GEOSITE,bahamut,🐉 Bahamut",
         "GEOSITE,tiktok,🎵 TikTok",
+        "GEOSITE,category-emby,🏴‍☠️ Emby",
         "GEOSITE,steam,🎮 Steam",
         "GEOSITE,epicgames,🎯 Epic Games",
         "GEOSITE,xbox,🕹️ Xbox",
@@ -625,6 +633,7 @@ const main = (config) => {
         "GEOSITE,paypal,💰 PayPal",
         "GEOSITE,stripe,💳 Stripe",
         "GEOSITE,category-cryptocurrency,🔗 Blockchain & Crypto",
+        "GEOSITE,category-porn,🫣 Secret",
         "GEOSITE,cn,🏡 DIRECT",
         "GEOSITE,!cn,🚀 PROXY",
         // ------------------------------------------------------
@@ -632,7 +641,7 @@ const main = (config) => {
         "RULE-SET,firehol_level1,🧱 Firewall",
         "GEOIP,google,🔍 Google",
         "GEOIP,facebook,📘 Meta",
-        "GEOIP,netflix,🎬 Netflix",
+        "GEOIP,netflix,🍿 Netflix",
         "GEOIP,twitter,🕊️ X",
         "GEOIP,telegram,✈️ Telegram",
         "GEOIP,cn,🏡 DIRECT",
