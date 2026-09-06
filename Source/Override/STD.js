@@ -111,21 +111,21 @@ const main = (config) => {
             "behavior": "classical",
             "format": "yaml",
             "interval": 43200, // 12H
-            "url": `${cdnBase}Ckrvxr/mihomo_yaml@master/Source/Addition/AntiAntiFraud.yaml`
+            "url": `${cdnBase}Ckrvxr/mihomo-yaml@main/Source/Addition/AntiAntiFraud.yaml`
         },
         "AntiPCDNFix": {
             "type": "http",
             "behavior": "classical",
             "format": "yaml",
             "interval": 43200, // 12H
-            "url": `${cdnBase}Ckrvxr/mihomo_yaml@master/Source/Addition/AntiPCDNFix.yaml`
+            "url": `${cdnBase}Ckrvxr/mihomo-yaml@main/Source/Addition/AntiPCDNFix.yaml`
         },
         "AntiPCDN": {
             "type": "http",
             "behavior": "classical",
             "format": "yaml",
             "interval": 43200, // 12H
-            "url": `${cdnBase}Ckrvxr/mihomo_yaml@master/Source/Addition/AntiPCDN.yaml`
+            "url": `${cdnBase}Ckrvxr/mihomo-yaml@main/Source/Addition/AntiPCDN.yaml`
         },
         "217heidaiAdblockFilters": {
             "type": "http",
@@ -139,7 +139,7 @@ const main = (config) => {
             "behavior": "classical",
             "format": "yaml",
             "interval": 43200, // 12H
-            "url": `${cdnBase}Ckrvxr/mihomo_yaml@master/Source/Addition/DirectProcess.yaml`
+            "url": `${cdnBase}Ckrvxr/mihomo-yaml@main/Source/Addition/DirectProcess.yaml`
         },
         "firehol_level1": {
             "type": "http",

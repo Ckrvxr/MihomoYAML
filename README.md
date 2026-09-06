@@ -35,8 +35,8 @@ Scripts compatible with both **FlClash** and **Sparkle**.
 
 | Script | URL |
 |--------|-----|
-| **PLUS** (Full) | `https://raw.githubusercontent.com/Ckrvxr/mihomo_yaml/refs/heads/main/Source/Override/PLUS.js` |
-| **STD** (Light) | `https://raw.githubusercontent.com/Ckrvxr/mihomo_yaml/refs/heads/main/Source/Override/STD.js` |
+| **PLUS** (Full) | `https://raw.githubusercontent.com/Ckrvxr/mihomo-yaml/refs/heads/main/Source/Override/PLUS.js` |
+| **STD** (Light) | `https://raw.githubusercontent.com/Ckrvxr/mihomo-yaml/refs/heads/main/Source/Override/STD.js` |
 
 **FlClash:** Tools → Advanced configuration → Script → add URL → Profiles → ... → More → Override → Script mode → select script → save → resync
 
